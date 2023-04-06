@@ -1,12 +1,10 @@
 import { FC, useState } from 'react';
-import Hamburger, { CommonBurgerProps } from 'hamburger-react';
+import Hamburger from 'hamburger-react';
 import NavDrawer from '../NavDrawer';
 
-interface HeaderProps {
-  onToggle?: CommonBurgerProps['onToggle'];
-}
+interface HeaderProps {}
 
-const Header: FC<HeaderProps> = ({ onToggle }) => {
+const Header: FC<HeaderProps> = () => {
   const [isActive, setIsActive] = useState(false);
 
   return (
