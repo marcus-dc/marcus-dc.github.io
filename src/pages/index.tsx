@@ -1,16 +1,21 @@
 import Header from '@/components/Header';
 import heroImage from '@/assets/hero-image.jpg';
+import Image from 'next/image';
+
+const NAME = 'Kimi no na wa'; // TODO: replace with real name
 
 export default function Home() {
   return (
     <>
       <Header></Header>
       <main>
-        <div
-          className="flex flex-col justify-center h-full bg-center bg-no-repeat bg-cover"
-          style={{ backgroundImage: `url('${heroImage.src}')` }}
-        >
-          <h1 className="text-center text-dark-100">{/* Name here */}</h1>
+        <div className="relative flex flex-col justify-center h-full -z-10">
+          <Image
+            src={heroImage}
+            alt={NAME}
+            className="absolute top-0 left-0 object-cover w-full h-full opacity-60"
+          ></Image>
+          <h1 className="text-center">{NAME}</h1>
         </div>
       </main>
     </>
