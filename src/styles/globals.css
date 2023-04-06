@@ -9,8 +9,7 @@
 
   html,
   body,
-  #__next,
-  main {
+  #__next {
     @apply h-full;
   }
 
