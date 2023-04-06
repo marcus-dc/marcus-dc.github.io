@@ -15,6 +15,6 @@
   }
 
   body {
-    @apply bg-heroGradient;
+    @apply bg-heroGradient bg-no-repeat bg-fixed;
   }
 }
