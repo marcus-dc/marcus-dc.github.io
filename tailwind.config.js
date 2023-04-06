@@ -30,6 +30,9 @@ module.exports = {
           500: '#8a8b8c',
           600: '#a0a1a2',
         }
+      },
+      backgroundImage: {
+        heroGradient: 'linear-gradient(38deg, rgba(41, 41, 41, 1) 0%, rgba(116, 118, 119, 1) 72%, rgba(83, 83, 83, 1) 100%)'
       }
     },
   },
