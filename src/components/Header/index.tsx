@@ -10,7 +10,7 @@ const Header: FC<HeaderProps> = () => {
 
   return (
     <>
-      <header className="fixed z-10 flex justify-end w-full h-12">
+      <header className="fixed z-10 flex justify-end w-full h-12 px-2">
         <Hamburger toggled={isActive} toggle={setIsActive} />
       </header>
       <AnimatePresence>
