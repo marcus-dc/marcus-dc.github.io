@@ -1,33 +1,33 @@
 import { FC } from 'react';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 
 interface NavDrawerProps {
   isActive?: boolean;
+  toggle: (toggled: boolean) => any;
 }
 
-const NavDrawer: FC<NavDrawerProps> = ({ isActive }) => {
+const NavDrawer: FC<NavDrawerProps> = ({ isActive, toggle }) => {
   return (
     <>
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={isActive ? () => toggle(!isActive) : undefined}
         className={clsx(
-          // TW
           'fixed top-0 left-0 w-full h-full bg-black bg-opacity-75',
-          // Animate
-          'animate__animated',
-          isActive ? 'animate__fadeIn' : 'animate__fadeOut'
+          !isActive && 'pointer-events-none'
         )}
-      ></div>
-      <div
-        className={clsx(
-          // TW
-          'fixed right-0 w-4/5 h-full bg-dark-100',
-          // Animate
-          'animate__animated',
-          isActive ? 'animate__slideInRight' : 'animate__slideOutRight'
-        )}
+      ></motion.div>
+      <motion.div
+        initial={{ x: '100%' }}
+        animate={{ x: '0%' }}
+        exit={{ x: '100%' }}
+        className="fixed right-0 w-4/5 h-full bg-dark-100"
       >
-        nav Drawer {String(isActive)}
-      </div>
+        nav Drawer
+      </motion.div>
     </>
   );
 };

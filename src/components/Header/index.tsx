@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import Hamburger from 'hamburger-react';
 import NavDrawer from '../NavDrawer';
+import { AnimatePresence } from 'framer-motion';
 
 interface HeaderProps {}
 
@@ -9,9 +10,13 @@ const Header: FC<HeaderProps> = () => {
 
   return (
     <>
-      <NavDrawer isActive={isActive}></NavDrawer>
+      <AnimatePresence>
+        {isActive && (
+          <NavDrawer toggle={setIsActive} isActive={isActive}></NavDrawer>
+        )}
+      </AnimatePresence>
       <header className="fixed flex justify-end w-full">
-        <Hamburger onToggle={setIsActive} />
+        <Hamburger toggled={isActive} toggle={setIsActive} />
       </header>
     </>
   );
