@@ -10,14 +10,14 @@ const Header: FC<HeaderProps> = () => {
 
   return (
     <>
+      <header className="fixed z-10 flex justify-end w-full h-12">
+        <Hamburger toggled={isActive} toggle={setIsActive} />
+      </header>
       <AnimatePresence>
         {isActive && (
           <NavDrawer toggle={setIsActive} isActive={isActive}></NavDrawer>
         )}
       </AnimatePresence>
-      <header className="fixed flex justify-end w-full">
-        <Hamburger toggled={isActive} toggle={setIsActive} />
-      </header>
     </>
   );
 };

@@ -24,7 +24,7 @@ const NavDrawer: FC<NavDrawerProps> = ({ isActive, toggle }) => {
         initial={{ x: '100%' }}
         animate={{ x: '0%' }}
         exit={{ x: '100%' }}
-        className="fixed right-0 w-4/5 h-full shadow bg-heroGradient"
+        className="fixed right-0 w-4/5 h-full pt-12 shadow bg-heroGradient"
       >
         nav Drawer
       </motion.div>
