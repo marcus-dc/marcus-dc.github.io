@@ -13,5 +13,5 @@ export const Card: FC<CardProps> = ({ children }) => {
 interface CardContentProps extends PropsWithChildren {}
 
 export const CardContent: FC<CardContentProps> = ({ children }) => {
-  return <div className="p-3">{children}</div>;
+  return <div className="w-full p-3 overflow-hidden">{children}</div>;
 };
