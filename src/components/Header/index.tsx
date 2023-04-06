@@ -1,16 +1,21 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import Hamburger, { CommonBurgerProps } from 'hamburger-react';
+import NavDrawer from '../NavDrawer';
 
 interface HeaderProps {
-  isBurgerActive?: CommonBurgerProps['toggled'];
   onToggle?: CommonBurgerProps['onToggle'];
 }
 
-const Header: FC<HeaderProps> = ({ isBurgerActive, onToggle }) => {
+const Header: FC<HeaderProps> = ({ onToggle }) => {
+  const [isActive, setIsActive] = useState(false);
+
   return (
-    <header className="fixed flex justify-end w-full bg-gradient-to-t">
-      <Hamburger toggled={isBurgerActive} onToggle={onToggle} />
-    </header>
+    <>
+      <NavDrawer isActive={isActive}></NavDrawer>
+      <header className="fixed flex justify-end w-full">
+        <Hamburger onToggle={setIsActive} />
+      </header>
+    </>
   );
 };
 

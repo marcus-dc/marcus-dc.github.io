@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import heroImage from '@/assets/hero-image.jpg';
+import NavDrawer from '@/components/NavDrawer';
 
 export default function Home() {
   return (
